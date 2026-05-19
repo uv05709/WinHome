@@ -82,6 +82,8 @@ A built-in **Reconciliation Engine** compares it to the live system and ensures 
 
 For a detailed breakdown of all configuration options, refer to the [Configuration Wiki](./docs/config.md).
 
+For complete, real-world setup examples (Developer, Minimalist, Gamer), see the [Configuration Cookbook](./docs/cookbook.md).
+
 ### ⚠️ Secrets & Security Warning
 
 **Do not commit `config.yaml` to public repositories** if it contains sensitive information such as API tokens, passwords, or private environment variables. We recommend using a private repository or `.gitignore` for configurations containing secrets.
