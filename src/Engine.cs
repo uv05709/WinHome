@@ -54,6 +54,7 @@ namespace WinHome
             _stateService = stateService;
             _logger = logger;
             _runtimeResolver = runtimeResolver;
+            _stateWriter = new StateWriter();
         }
 
         // Backwards-compatible overload accepting a StateWriter (injected via DI). If not provided the default is used.
@@ -237,7 +238,6 @@ namespace WinHome
                             Status = StepStatus.Skipped,
                             AppliedAt = previous.AppliedAt
                         };
-                        _stateWriter.RecordStep(skippedResult);
                         applyState[stepId] = skippedResult;
                         continue;
                     }
@@ -394,7 +394,6 @@ namespace WinHome
                             Status = StepStatus.Skipped,
                             AppliedAt = previous.AppliedAt
                         };
-                        _stateWriter.RecordStep(skippedResult);
                         applyState[stepId] = skippedResult;
                         continue;
                     }
